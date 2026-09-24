@@ -1,0 +1,168 @@
+/* --- MENU SECTION --- */
+.menu-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 40px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.top-cloud-img {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.menu-container {
+  width: 100%;
+  max-width: 95vw;
+  text-align: center;
+  z-index: 3;
+}
+
+.menu-title {
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-headline-text);
+  margin-bottom: 2.5rem;
+}
+
+/* CAROUSEL DESKTOP */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.cards-viewport {
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.cards-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* GAME CARD */
+.game-card {
+  flex: 0 0 calc((100% - 4rem) / 3);
+  min-width: 280px;
+  max-width: 360px;
+  height: 440px;
+  background-color: var(--color-bg);
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+}
+
+.game-card h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-headline-text);
+  margin: 0;
+}
+
+.game-card img {
+  width: 100%;
+  max-width: 200px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.btn-main {
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: var(--radius-btn);
+  padding: 0.85rem 3rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0px 6px 0px var(--border-color);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-main:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0px 9px 0px var(--border-color);
+  filter: brightness(1.05);
+}
+
+.btn-main:active {
+  transform: translateY(3px) scale(0.98);
+  box-shadow: 0px 2px 0px var(--border-color);
+}
+
+.nav-btn {
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s;
+  flex-shrink: 0;
+}
+
+.nav-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px var(--color-stroke);
+}
+
+.dots-container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.dot {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--color-secondary);
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--color-button);
+  transform: scale(1.3);
+}

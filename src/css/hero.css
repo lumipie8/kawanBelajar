@@ -1,0 +1,120 @@
+/* Hero Cloud Decorations */
+.cloud-top, .cloud-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud-top { top: 0; }
+.cloud-bottom { bottom: -18px; }
+
+.cloud-top img, .cloud-bottom img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Main Content Landing */
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 75rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3rem, 6vw, 6rem);
+  padding: 0 2rem;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+.title-group { margin-bottom: 1.25rem; }
+
+.title-group h1 {
+  font-size: clamp(3.25rem, 4.5vw, 5.25rem);
+  font-weight: 700;
+  color: var(--color-headline-text);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  font-size: clamp(1.25rem, 1.6vw, 1.85rem);
+  font-weight: 400;
+  color: var(--color-paragraph-text);
+  margin-bottom: 2.25rem;
+  opacity: 0.9;
+}
+
+/* Primary Button & Effects */
+.btn-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--color-button);
+  color: var(--color-button-text);
+  font-size: clamp(1.2rem, 1.4vw, 1.65rem);
+  font-weight: 700;
+  padding: 1rem 3.2rem;
+  border: var(--border-thickness) solid var(--border-color);
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.1s;
+}
+
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0px 2px 0px var(--color-stroke);
+}
+
+.lottie-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;
+  height: 300%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.click-heart-effect {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.mascot-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: clamp(24rem, 32vw, 38rem);
+  height: clamp(24rem, 32vw, 38rem);
+  flex-shrink: 0;
+}
+
+.mascot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
