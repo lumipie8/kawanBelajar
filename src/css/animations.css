@@ -1,0 +1,32 @@
+/* Efek Hover & Click pada Tombol */
+.btn-primary {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-primary:hover {
+  transform: translateY(-0.2rem) scale(1.03);
+  box-shadow: 0 0.6rem 1.25rem rgba(255, 139, 167, 0.5);
+  background-color: #ff7597;
+}
+
+.btn-primary:active {
+  transform: translateY(0.06rem) scale(0.98);
+  box-shadow: 0 0.25rem 0.5rem rgba(255, 139, 167, 0.3);
+}
+
+/* Animasi Melayang Maskot dari Awal Load */
+.mascot-image {
+  animation: floatMascot 3.5s ease-in-out infinite;
+}
+
+@keyframes floatMascot {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

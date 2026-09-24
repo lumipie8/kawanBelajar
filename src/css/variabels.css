@@ -1,40 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
 
 :root {
-/* Pallete Warna */
---color-bg: #FAEEE7;
---color-main: #FFFFFE;
---color-headline-text: #33272A;
---color-paragraph-text: #594A4E;
---color-button: #FF8BA7;
---color-button-text: #33272A;
---color-stroke: #33272A;
---color-secondary: #FFC6C7;
---color-tertiary: #C3F0CA;
-
-/* Typography */
---font-main: "Fredoka", cursive, sans-serif;
-
-/* StyleBorder */
---border-thickness: 3px;
---border-color: var(--color-stroke);
---shadow: 0px 5px 0px var(--color-stroke);
+  /* Palet Warna */
+  --color-bg: #FAEEE7;
+  --color-main: #fffffe;
+  --color-headline: #33272A;
+  --color-paragraph: #594A4E;
+  --color-button: #FF8BA7;
+  --color-button-text: #33272a;
+  --color-stroke: #FFC6C7;
+  --color-card-bg: #FFF8F5;
+  
+  /* Typography & Layout Relative */
+  --font-primary: 'Fredoka', sans-serif;
+  --radius-card: 1.5rem;
+  --radius-btn: 3.125rem;
 }
 
-/* Global Reset */
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+/* Reset Standar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
 }
 
 body {
-    font-family: var(--font-main);
-    background-color: var(--color-bg);
-    color: var(--color-headline-text);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }

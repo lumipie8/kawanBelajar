@@ -5,116 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KawanBelajar</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
     <link rel="stylesheet" href="src/css/variabels.css" />
     <link rel="stylesheet" href="src/css/components.css" />
     <link rel="stylesheet" href="src/css/animations.css" />
   </head>
-
   <body>
-    <main class="home-container">
-      <!--Hero Section-->
-      <section class="hero-section">
-        <h1 class="hero-section_title">Halo KawanBelajar!</h1>
-        <button class="hero-section_btn">Ayo Mulai!</button>
+    <main class="desktop-frame">
+      <div class="cloud-top">
+        <img src="assets/images/top-cloud.png" alt="Awan Atas" />
+      </div>
 
-        <div class="hero-mascot">
+      <section class="main-content">
+        <div class="text-section">
+          <div class="title-group">
+            <h1>Halo!</h1>
+            <h1>KawanBelajar!</h1>
+          </div>
+          <p class="subtitle">Mau main game apa hari ini?</p>
+
+          <div class="btn-wrapper">
+            <button class="btn-primary" id="btnMulai">Ayo Mulai!</button>
+            <div id="lottie-burst" class="lottie-container"></div>
+          </div>
+        </div>
+
+        <div class="mascot-section">
           <img
-            src="assets/images/hero-mascot.png"
-            alt="Mascot Kelinci KawanBelajar"
+            src="assets/images/hero-mascot-new.png"
+            alt="Maskot KawanBelajar"
+            class="mascot-image"
           />
         </div>
       </section>
 
-      <section class="menu-section">
-        <h2 class="menu-section__title">Pilih Permainan!</h2>
-
-        <div class="menu-carousel">
-          <div class="carousel__track">
-            <!-- Card 1 : Membaca-->
-            <article class="card-game">
-              <div class="card-game__content">
-                <h3 class="card-game__title">Membaca</h3>
-                <img
-                  src="assets/images/menu-card_membaca.png"
-                  alt="Game Membaca"
-                />
-              </div>
-              <button class="card-game__btn">MAIN!</button>
-            </article>
-
-            <!-- Card 2 : Menghitung-->
-            <article class="card-game">
-              <div class="card-game__content">
-                <h3 class="card-game__title">Menghitung</h3>
-                <img
-                  src="assets/images/menu-card_menghitung.png"
-                  alt="Game Menghitung"
-                />
-              </div>
-              <button class="card-game__btn">MAIN!</button>
-            </article>
-
-            <!-- Card 3 : Mengetik-->
-            <article class="card-game">
-              <div class="card-game__content">
-                <h3 class="card-game__title">Mengetik</h3>
-                <img
-                  src="assets/images/menu-card_mengetik.png"
-                  alt="Game Mengetik"
-                />
-              </div>
-              <button class="card-game__btn">MAIN!</button>
-            </article>
-
-            <!-- Card 4 : TebakLagu-->
-            <article class="card-game">
-              <div class="card-game__content">
-                <h3 class="card-game__title">Tebak Lagu</h3>
-                <img
-                  src="assets/images/menu-card_tebakLagu.png"
-                  alt="Game Tebak Lagu"
-                />
-              </div>
-              <button class="card-game__btn">MAIN!</button>
-            </article>
-
-            <!-- Card 5 : TebakGambar-->
-            <article class="card-game">
-              <div class="card-game__content">
-                <h3 class="card-game__title">Tebak Gambar</h3>
-                <img
-                  src="assets/images/menu-card_tebakGambar.png"
-                  alt="Game Tebak Gambar"
-                />
-              </div>
-              <button class="card-game__btn">MAIN!</button>
-            </article>
-          </div>
-        </div>
-
-        <!-- Slider Navigasi -->
-        <div class="menu-nav">
-          <button class="left-btn" aria-label="Sebelumnya">
-            <img
-              src="assets/vector/arrow-left_btn.svg"
-              alt="tombol arah kiri"
-            />
-          </button>
-
-          <div class="menu-nav__dot">
-            <span class="dot dot--actived"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-
-          <button class="right-btn" aria-label="Selanjutnya">
-            <img
-              src="assets/vector/arrow-right_btn.svg"
-              alt="tombol arah kanan"
-            />
-          </button>
-        </div>
-      </section>
+      <div class="cloud-bottom">
+        <img src="assets/images/bottom-cloud.png" alt="Awan Bawah" />
+      </div>
     </main>
+
+    <script src="src/js/config.js"></script>
+    <script src="src/js/app.js"></script>
   </body>
 </html>
