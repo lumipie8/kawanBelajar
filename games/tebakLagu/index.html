@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Level - Tebak Lagu | KawanBelajar</title>
+    <!-- CSS lokal Tebak Lagu -->
+    <link rel="stylesheet" href="css/levelSelect.css" />
+  </head>
+
+  <body>
+    <!-- Tirai Transisi Halaman -->
+    <div id="page-transition-overlay" class="page-overlay"></div>
+
+    <div class="level-page-container">
+      <!-- Awan Atas Pink -->
+      <img
+        src="../../assets/images/top-cloud-v2.png"
+        alt="Awan Atas"
+        class="cloud-top-pink"
+      />
+
+      <!-- Main Card Container -->
+      <main class="level-card">
+        <header class="card-header">
+          <!-- Kembali ke Carousel Menu di Landing Page -->
+          <a
+            href="../../index.html#menu-section"
+            class="nav-icon-btn back-btn"
+            aria-label="Kembali ke Menu"
+          >
+            <span class="icon-arrow">&lt;</span>
+          </a>
+
+          <div class="title-badge">
+            <h1>Level</h1>
+          </div>
+
+          <!-- Kembali ke Homepage Utama -->
+          <a
+            href="../../index.html"
+            class="nav-icon-btn home-btn"
+            aria-label="Ke Halaman Utama"
+          >
+            <img
+              src="../../assets/vector/home_btn.svg"
+              alt="Home"
+              class="home-icon"
+            />
+          </a>
+        </header>
+
+        <div class="levels-grid">
+          <!-- Level 1 Terbuka -->
+          <button class="level-btn unlocked">1</button>
+
+          <!-- Level 2-10 Terkunci / Belum Terbuka -->
+          <button class="level-btn" disabled>2</button>
+          <button class="level-btn" disabled>3</button>
+          <button class="level-btn" disabled>4</button>
+          <button class="level-btn" disabled>5</button>
+          <button class="level-btn" disabled>6</button>
+          <button class="level-btn" disabled>7</button>
+          <button class="level-btn" disabled>8</button>
+          <button class="level-btn" disabled>9</button>
+          <button class="level-btn" disabled>10</button>
+        </div>
+
+        <!-- Ikon Musik Kiri Bawah -->
+        <img
+          src="../../assets/vector/music.svg"
+          alt="Music Note"
+          class="music-note-icon"
+        />
+      </main>
+
+      <!-- Maskot Kelinci Kanan Bawah -->
+      <img
+        src="../../assets/images/head-bunny.png"
+        alt="Maskot Kelinci"
+        class="bunny-mascot"
+      />
+    </div>
+
+    <!-- JS lokal Tebak Lagu -->
+    <script src="js/levelSelect.js"></script>
+  </body>
+</html>

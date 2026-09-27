@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+:root {
+  /* Palet Warna */
+  --color-bg: #FAEEE7;
+  --color-main: #FFFFFE;
+  --color-headline-text: #33272A;
+  --color-paragraph-text: #594A4E;
+  --color-button: #FF8BA7;
+  --color-button-text: #33272A;
+  --color-stroke: #33272A;
+  --color-secondary: #FFC6C7;
+  --color-tertiary: #C3F0CA;
+  
+  /* Typography & Layout Relative */
+  --font-primary: 'Fredoka', sans-serif;
+  --radius-card: 2rem;
+  --radius-btn: 3.125rem;
+
+  /* Style Border & Shadow */
+  --border-thickness: 3px;
+  --border-color: var(--color-stroke);
+  --shadow: 0px 5px 0px var(--color-stroke);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLING
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+}
+
+body {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Container Utama Frame */
+.level-page-container {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* --- DEKORASI AWAN ATAS --- */
+.cloud-top-pink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   CARD UTAMA & HEADER LEVEL
+   ========================================================================== */
+.level-card {
+  background: var(--color-main);
+  border-radius: var(--radius-card);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 54rem;
+  padding: 4.5rem 3.5rem 3rem;
+  position: relative;
+  z-index: 2;
+  margin-top: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: -2.25rem;
+  left: 2.5rem;
+  right: 2.5rem;
+}
+
+.title-badge {
+  background-color: var(--color-button);
+  color: var(--color-headline-text);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  padding: 0.6rem 4rem;
+  border-radius: var(--radius-btn);
+}
+
+.title-badge h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+/* Tombol Navigasi Lingkaran */
+.nav-icon-btn {
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: var(--color-button);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-icon-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-secondary);
+}
+
+.icon-arrow {
+  color: var(--color-headline-text);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: -2px;
+}
+
+.nav-icon-btn .home-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   GRID 10 TOMBOL LEVEL
+   ========================================================================== */
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.75rem 1.5rem;
+  margin-top: 1rem;
+  justify-items: center;
+}
+
+.level-btn {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  background-color: var(--color-secondary);
+  color: var(--color-headline-text);
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling Default Tombol Level Terbuka (Level 1) */
+.level-btn.unlocked {
+  background-color: var(--color-secondary);
+  color: var(--color-headline-text);
+  border-color: var(--color-stroke);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Saat Hover pada Level yang Terbuka */
+.level-btn.unlocked:hover {
+  background-color: var(--color-button);
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px var(--color-stroke);
+}
+
+/* State Saat Tombol Dipencet / Active */
+.level-btn.unlocked:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 0px var(--color-stroke);
+}
+
+/* Styling Tombol Level Terkunci */
+.level-btn:not(.unlocked),
+.level-btn[disabled] {
+  background-color: #E2E8F0;
+  color: #A0AEC0;
+  border-color: #CBD5E0;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.8;
+}
+/* Styling Tombol Level yang Sudah Selesai (Completed) */
+.level-btn.completed {
+  background-color: var(--color-tertiary); /* Hijau Pastel */
+  color: var(--color-headline-text);
+  border-color: var(--color-stroke);
+  cursor: pointer;
+}
+
+/* Saat Hover pada Level yang Sudah Selesai */
+.level-btn.completed:hover {
+  background-color: #A8E6B1; /* Sedikit lebih gelap dari tertiary untuk efek hover */
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px var(--color-stroke);
+}
+
+.level-btn.completed:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 0px var(--color-stroke);
+}
+
+/* ==========================================================================
+   ORNAMEN DEKORASI
+   ========================================================================== */
+.music-note-icon {
+  position: absolute;
+  bottom: -1.25rem;
+  left: -1.25rem;
+  width: 3.75rem;
+  height: auto;
+  z-index: 3;
+}
+
+.bunny-mascot {
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  width: 16rem;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SETUP RESPONSIVE (4 BREAKPOINTS)
+   ========================================================================== */
+
+/* 1. Desktop Besar / Monitor Wide (>= 1600px) */
+@media (min-width: 1600px) {
+  .level-card {
+    max-width: 68rem;
+    padding: 6rem 4.5rem 4rem;
+    border-width: 4px;
+    border-radius: 2.5rem;
+  }
+
+  .card-header {
+    top: -3rem;
+    left: 3.5rem;
+    right: 3.5rem;
+  }
+
+  .title-badge {
+    padding: 0.8rem 5.5rem;
+    border-width: 4px;
+  }
+
+  .title-badge h1 {
+    font-size: 3rem;
+  }
+
+  .nav-icon-btn {
+    width: 4.75rem;
+    height: 4.75rem;
+    border-width: 4px;
+  }
+
+  .icon-arrow {
+    font-size: 2.4rem;
+  }
+
+  .nav-icon-btn .home-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .levels-grid {
+    gap: 2.5rem 2rem;
+  }
+
+  .level-btn {
+    width: 6.5rem;
+    height: 6.5rem;
+    font-size: 2.75rem;
+    border-width: 4px;
+    box-shadow: 0px 7px 0px var(--color-stroke);
+  }
+
+  .music-note-icon {
+    width: 5rem;
+    bottom: -1.5rem;
+    left: -1.5rem;
+  }
+
+  .bunny-mascot {
+    width: 24rem;
+    max-width: none;
+    max-height: none;
+    right: 3rem;
+    bottom: 0;
+  }
+}
+
+/* 2. Laptop / Desktop Standar (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .level-card {
+    max-width: 52rem;
+  }
+
+  .bunny-mascot {
+    width: 15rem;
+    max-width: 20vw;
+    max-height: 10vh;
+    right: 2.5rem;
+    bottom: 0;
+  }
+}
+
+/* 3. Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 769px) {
+  .level-card {
+    max-width: 42rem;
+    padding: 3.5rem 2rem 2.5rem;
+  }
+
+  .card-header {
+    left: 1.5rem;
+    right: 1.5rem;
+    top: -1.8rem;
+  }
+
+  .title-badge {
+    padding: 0.5rem 3rem;
+  }
+
+  .title-badge h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-icon-btn {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .icon-arrow {
+    font-size: 1.5rem;
+  }
+
+  .nav-icon-btn .home-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .level-btn {
+    width: 4.25rem;
+    height: 4.25rem;
+    font-size: 1.6rem;
+  }
+
+  .bunny-mascot {
+    width: 12rem;
+    right: 1.5rem;
+  }
+}
+
+/* 4. Mobile / Smartphone (<= 768px) */
+@media (max-width: 768px) {
+  .level-card {
+    max-width: 90%;
+    padding: 2.8rem 0.75rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .card-header {
+    left: 0.5rem;
+    right: 0.5rem;
+    top: -1.35rem;
+  }
+
+  .title-badge {
+    padding: 0.35rem 1.5rem;
+  }
+
+  .title-badge h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav-icon-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+
+  .icon-arrow {
+    font-size: 1.1rem;
+  }
+
+  .nav-icon-btn .home-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .levels-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem 0.25rem;
+    margin-top: 0.5rem;
+    padding: 0 0.25rem;
+  }
+
+  .level-btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 0.95rem;
+    border-width: 2px;
+    box-shadow: 0px 3px 0px var(--color-stroke);
+  }
+
+  .music-note-icon {
+    width: 2rem;
+    bottom: -0.65rem;
+    left: -0.65rem;
+  }
+
+  .bunny-mascot {
+    width: 11rem;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: -0.5rem;
+  }
+}

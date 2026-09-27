@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tebak Lagu - Play Arena</title>
+    <link rel="stylesheet" href="css/playArena.css" />
+  </head>
+
+  <body>
+    <!-- Element Audio untuk Pemutaran Lagu -->
+    <audio id="bgAudio"></audio>
+
+    <div class="play-page-container">
+      <header class="play-header">
+        <div class="nav-buttons-left">
+          <a href="index.html" class="nav-icon-btn" aria-label="Kembali">
+            <span class="icon-arrow">&lt;</span>
+          </a>
+
+          <a href="../../index.html" class="nav-icon-btn" aria-label="Home">
+            <img
+              src="../../assets/vector/home_btn.svg"
+              alt="Home"
+              class="home-icon"
+            />
+          </a>
+
+          <button
+            id="btnToggleSound"
+            class="nav-icon-btn"
+            aria-label="Sound Toggle"
+          >
+            <img
+              src="../../assets/vector/volume_btn.svg"
+              alt="Sound"
+              class="sound-icon"
+            />
+          </button>
+        </div>
+
+        <div class="title-badge">
+          <h1>Tebak Lagu</h1>
+        </div>
+
+        <div class="progress-badge">
+          <span id="currentQuestionText">1/10</span>
+        </div>
+      </header>
+
+      <main class="play-card">
+        <div class="music-player-display">
+          <span class="sparkle sparkle-1">
+            <img src="../../assets/vector/star.svg" alt="star" />
+          </span>
+          <span class="music-note note-1">
+            <img src="../../assets/vector/music.svg" alt="" />
+          </span>
+
+          <div class="cover-art-box">
+            <img
+              src="../../assets/images/menu-card_tebakLagu.png"
+              alt="Bunny use headphone"
+              class="mascot-img"
+            />
+          </div>
+
+          <span class="music-note note-2">
+            <img src="../../assets/vector/music_v2.svg" alt="music" />
+          </span>
+          <span class="sparkle sparkle-2">
+            <img src="../../assets/vector/star.svg" alt="star" />
+          </span>
+        </div>
+
+        <div class="audio-controls">
+          <button
+            id="btnPrevAudio"
+            class="audio-btn nav-audio-btn"
+            aria-label="Prev"
+          >
+            <span class="icon-control">⏮</span>
+          </button>
+
+          <button
+            id="playBtn"
+            class="audio-btn play-main-btn"
+            aria-label="Play"
+          >
+            <span class="icon-play">▶</span>
+            <span class="icon-pause">❚❚</span>
+          </button>
+
+          <button
+            id="btnNextAudio"
+            class="audio-btn nav-audio-btn"
+            aria-label="Next"
+          >
+            <span class="icon-control">⏭</span>
+          </button>
+        </div>
+
+        <form id="answerForm" class="answer-form" autocomplete="off">
+          <div class="input-pill-wrapper">
+            <input
+              type="text"
+              id="userAnswerInput"
+              class="answer-input"
+              placeholder="Isi jawaban disini"
+              required
+            />
+            <button
+              type="submit"
+              class="submit-check-btn"
+              aria-label="Submit Jawaban"
+            >
+              <span class="check-mark">✓</span>
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <!-- Script Data & Logic -->
+    <script src="js/data.js"></script>
+    <script src="js/playArena.js"></script>
+  </body>
+</html>

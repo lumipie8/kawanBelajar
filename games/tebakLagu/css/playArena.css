@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+:root {
+  --color-bg: #FAEEE7;
+  --color-main: #FFFFFE;
+  --color-headline-text: #33272A;
+  --color-paragraph-text: #594A4E;
+  --color-button: #FF8BA7;
+  --color-button-text: #33272A;
+  --color-stroke: #33272A;
+  --color-secondary: #FFC6C7;
+  --color-tertiary: #C3F0CA;
+  
+  --font-primary: 'Fredoka', sans-serif;
+  --radius-card: 2.5rem;
+  --radius-btn: 3.125rem;
+
+  --border-thickness: 3px;
+  --border-color: var(--color-stroke);
+  --shadow: 0px 5px 0px var(--color-stroke);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+}
+
+body {
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.play-page-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Header & Navigation */
+.play-header {
+  width: 100%;
+  max-width: 62rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-buttons-left {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-icon-btn {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-button);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-icon-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-secondary);
+}
+
+.icon-arrow {
+  color: var(--color-headline-text);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nav-icon-btn .home-icon,
+.nav-icon-btn .sound-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  display: block;
+}
+
+.title-badge {
+  background-color: var(--color-button);
+  color: var(--color-headline-text);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  padding: 0.6rem 4.5rem;
+  border-radius: var(--radius-btn);
+}
+
+.title-badge h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.progress-badge {
+  background-color: var(--color-button);
+  color: var(--color-headline-text);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  padding: 0.6rem 2.25rem;
+  border-radius: var(--radius-btn);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Card Play Arena */
+.play-card {
+  background: var(--color-main);
+  border-radius: var(--radius-card);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 62rem;
+  padding: 3rem 2.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cover & Decorative Elements */
+.music-player-display {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.cover-art-box {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 2.25rem;
+  border: var(--border-thickness) solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background-color: var(--color-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.music-note, .sparkle {
+  position: absolute;
+  pointer-events: none;
+}
+
+.music-note img, .sparkle img {
+  width: 3rem;
+  height: auto;
+}
+
+.note-1 { top: 30%; left: -5.5rem; }
+.note-2 { top: 25%; right: -5.5rem; }
+.sparkle-1 { bottom: 15%; left: -7.5rem; }
+.sparkle-2 { bottom: 20%; right: -7.5rem; }
+
+/* Audio Controls & Play Button State */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2.25rem;
+}
+
+.audio-btn {
+  background-color: var(--color-button);
+  border: var(--border-thickness) solid var(--border-color);
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  color: var(--color-headline-text);
+  padding: 0;
+}
+
+.audio-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-secondary);
+}
+
+.audio-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0px 2px 0px var(--color-stroke);
+}
+
+.audio-btn .icon-pause {
+  display: none;
+}
+
+.audio-btn.playing .icon-play {
+  display: none;
+}
+
+.audio-btn.playing .icon-pause {
+  display: inline-block !important;
+  font-size: 0.9em;
+}
+
+.nav-audio-btn {
+  width: 3.75rem;
+  height: 3.75rem;
+  font-size: 1.4rem;
+}
+
+.play-main-btn {
+  width: 5.25rem;
+  height: 5.25rem;
+  font-size: 2rem;
+}
+
+.icon-play {
+  margin-left: 4px;
+}
+
+/* Form Input Jawaban */
+.answer-form {
+  width: 100%;
+  max-width: 38rem;
+}
+
+.input-pill-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 1.1rem 4rem 1.1rem 2rem;
+  border-radius: 3.125rem;
+  border: var(--border-thickness) solid var(--border-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-headline-text);
+  outline: none;
+  background-color: var(--color-main);
+  text-align: center;
+}
+
+.answer-input::placeholder {
+  color: #A0AEC0;
+  font-weight: 600;
+}
+
+.submit-check-btn {
+  position: absolute;
+  right: 0.6rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background-color: var(--color-button);
+  border: var(--border-thickness) solid var(--border-color);
+  color: var(--color-headline-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.submit-check-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--color-secondary);
+}
+
+/* Responsive Styles */
+@media (min-width: 1600px) {
+  :root {
+    --border-thickness: 5px;
+    --shadow: 0px 9px 0px var(--color-stroke);
+  }
+
+  .play-header, .play-card {
+    max-width: 92rem;
+  }
+
+  .play-header {
+    margin-bottom: 2.8rem;
+  }
+
+  .nav-buttons-left {
+    gap: 1.5rem;
+  }
+
+  .nav-icon-btn {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .icon-arrow {
+    font-size: 2.8rem;
+  }
+
+  .nav-icon-btn .home-icon,
+  .nav-icon-btn .sound-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .title-badge {
+    padding: 1rem 6.5rem;
+  }
+
+  .title-badge h1 {
+    font-size: 3.5rem;
+  }
+
+  .progress-badge {
+    padding: 1rem 3.5rem;
+    font-size: 3.2rem;
+  }
+
+  .play-card {
+    padding: 4.5rem 3.5rem 5rem;
+    border-radius: 3.5rem;
+  }
+
+  .music-player-display {
+    margin-bottom: 3.2rem;
+  }
+
+  .cover-art-box {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 3.2rem;
+  }
+
+  .music-note img, .sparkle img {
+    width: 5.2rem;
+  }
+
+  .note-1 { left: -9.5rem; }
+  .note-2 { right: -9.5rem; }
+  .sparkle-1 { left: -11rem; }
+  .sparkle-2 { right: -11rem; }
+
+  .audio-controls {
+    gap: 2.8rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .nav-audio-btn {
+    width: 5.5rem;
+    height: 5.5rem;
+    font-size: 2.4rem;
+  }
+
+  .play-main-btn {
+    width: 8rem;
+    height: 8rem;
+    font-size: 3.2rem;
+  }
+
+  .answer-form {
+    max-width: 56rem;
+  }
+
+  .answer-input {
+    padding: 1.8rem 6rem 1.8rem 2.8rem;
+    border-radius: 5rem;
+    font-size: 1.9rem;
+  }
+
+  .submit-check-btn {
+    width: 4.8rem;
+    height: 4.8rem;
+    font-size: 2.2rem;
+    right: 0.9rem;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+  .play-header, .play-card {
+    max-width: 46rem;
+  }
+
+  .nav-icon-btn {
+    width: 3.8rem;
+    height: 3.8rem;
+  }
+
+  .title-badge {
+    padding: 0.5rem 2.5rem;
+  }
+
+  .title-badge h1 {
+    font-size: 1.8rem;
+  }
+
+  .progress-badge {
+    font-size: 1.6rem;
+    padding: 0.5rem 1.8rem;
+  }
+
+  .cover-art-box {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .note-1, .note-2, .sparkle-1, .sparkle-2 {
+    display: none;
+  }
+
+  .nav-audio-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+  }
+
+  .play-main-btn {
+    width: 4.8rem;
+    height: 4.8rem;
+    font-size: 1.9rem;
+  }
+
+  .answer-input {
+    font-size: 1.2rem;
+    padding: 1.1rem 4rem 1.1rem 2rem;
+  }
+
+  .submit-check-btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --border-thickness: 3px;
+    --shadow: 0px 5px 0px var(--color-stroke);
+  }
+
+  .play-header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .nav-buttons-left {
+    order: 1;
+    gap: 0.5rem;
+  }
+
+  .progress-badge {
+    order: 2;
+    font-size: 1.2rem;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .title-badge {
+    order: 3;
+    width: 100%;
+    padding: 0.4rem 1rem;
+  }
+
+  .title-badge h1 {
+    font-size: 1.3rem;
+  }
+
+  .nav-icon-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .icon-arrow {
+    font-size: 1.2rem;
+  }
+
+  .nav-icon-btn .home-icon,
+  .nav-icon-btn .sound-icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .play-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .cover-art-box {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 1.75rem;
+  }
+
+  .note-1, .note-2, .sparkle-1, .sparkle-2 {
+    display: none;
+  }
+
+  .audio-controls {
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .nav-audio-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1rem;
+  }
+
+  .play-main-btn {
+    width: 4.25rem;
+    height: 4.25rem;
+    font-size: 1.6rem;
+  }
+
+  .answer-input {
+    font-size: 1rem;
+    padding: 0.85rem 3.25rem 0.85rem 1.25rem;
+  }
+
+  .submit-check-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    right: 0.4rem;
+  }
+}

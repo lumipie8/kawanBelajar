@@ -95,12 +95,13 @@
   z-index: 10;
 }
 
-.click-heart-effect {
+/* Container Efek Klik Star Burst */
+.click-star-effect {
   position: fixed;
-  width: 120px;
-  height: 120px;
-  pointer-events: none;
+  width: 80px;  /* Ukuran animasi bintang saat diklik */
+  height: 80px;
   transform: translate(-50%, -50%);
+  pointer-events: none;
   z-index: 9999;
 }
 
